@@ -1,8 +1,13 @@
 # Links
 
+[Demo](https://martingoulet.github.io/bga-dice-stock/demo/index.html)
+
 # Concept
 
 # Integration
+## On standard BGA project
+Copy bga-dice-stock.css and bga-dice-stock.js files to the `modules` directory.  
+Then you can include the module on your game :
 
 CSS file:
 
@@ -18,7 +23,7 @@ define([
    "dojo/debounce",
    "ebg/core/gamegui",
    /*...,*/
-   g_gamethemeurl + "modules/bga-dice.js",
+   g_gamethemeurl + "modules/bga-dice-stock.js",
 ],
-function (dojo, declare, debounce, gamegui, /*...,*/ bgaCards) {
+function (dojo, declare, debounce, gamegui, /*...,*/ bgaDiceStock) {
 ```
