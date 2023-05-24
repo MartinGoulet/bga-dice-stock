@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>bga-dicemanager demo</title>
+    <script>
+        function define() { }
+        function _(text) { return text; }
+    </script>
+    <link href="../bga-dice-stock.css" rel="stylesheet">
+    <script src="../bga-dice-stock.js" type="text/javascript"></script>
+    <link href="./bga.css" rel="stylesheet">
+    <link href="./demo.css" rel="stylesheet">
+    </script>
+    <script src="./manager.js" type="text/javascript"></script>
+</head>
+
+<body class="mode_3d1">
+    <div class="body_wrapper">
+        <div class="page-title">
+            <button id="btnMode" class="bgabutton bgabutton_blue">3D mode</button>
+            <button id="btnReroll" class="bgabutton bgabutton_blue">Reroll</button>
+        </div>
+        <div id="main-board" class="game_play_area">
+            <h2>Main board</h2>
+            <div id="stocks">
+                
+            </div>
+
+            <h2>Drop</h2>
+            <div id="drop"></div>
+        </div>
+    </div>
+    <script>
+        initManager();
+    </script>
+</body>
+
+</html>

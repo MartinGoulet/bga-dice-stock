@@ -1,0 +1,19 @@
+.dice-stock .locked-dice {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--lock-color);
+    border-radius: 5px;
+
+    .lock {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='m3,9h1V6a5,5 0 0,1 12,0V9h1v11H3M14,9V6a4,4 0 1,0-8,0v3' fill='%23211D1F'/%3E%3C/svg%3E");
+        width: 32px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: var(--lock-color);
+    }
+
+    > div {
+        white-space: nowrap;
+    }
+}

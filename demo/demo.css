@@ -1,0 +1,43 @@
+#main-board {
+    background: url(https://x.boardgamearena.net/data/themereleases/221026-1000/img/layout/back-main.jpg), #f2f2f2;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.body_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#main-board {
+    height: 100%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+#main-board div {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.dice-stock {
+    min-width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 20px;
+}
+
+/* Mandatory */
+
+.moon-elf-dice {
+    background-image: url('img/moon-elf-dice.jpg');
+}
+
+.barbarian-dice {
+    background-image: url('img/barbarian-dice.jpg');
+}

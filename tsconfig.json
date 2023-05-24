@@ -1,0 +1,17 @@
+{
+    "rootDir": "src", 
+    "compilerOptions": {
+      "target": "es5",
+      "module": "none",
+      "lib": ["dom", "esnext"],  
+      "sourceMap": false,
+      "outFile": "bga-dice-stock.js",
+      "declaration": true,
+    },
+    "files": [
+      "shared/framework.d.ts",
+      "src/interfaces.d.ts",
+      "src/dice-stock.ts",
+      "src/define.ts"
+    ]
+}

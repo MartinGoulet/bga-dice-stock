@@ -1,0 +1,202 @@
+.dice-stock {
+  --dice-size: 50px;
+  --dice-border-radius: 5px;
+  --lock-color: "#000";
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  min-height: 50px;
+  margin: 10px 0;
+}
+.dice-stock.selectable .dice {
+  cursor: pointer;
+}
+.dice-stock * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dice-stock .locked-dice {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--lock-color);
+  border-radius: 5px;
+}
+.dice-stock .locked-dice .lock {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='m3,9h1V6a5,5 0 0,1 12,0V9h1v11H3M14,9V6a4,4 0 1,0-8,0v3' fill='%23211D1F'/%3E%3C/svg%3E");
+  width: 32px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--lock-color);
+}
+.dice-stock .locked-dice > div {
+  white-space: nowrap;
+}
+
+.dice-stock .dice-selector {
+  border: 2px solid transparent;
+  min-height: var(--dice-size);
+  margin-left: var(--space-zone);
+  display: flex;
+  align-items: center;
+}
+
+.dice-stock .dice {
+  display: inline-block;
+  position: relative;
+  width: var(--dice-size);
+  height: var(--dice-size);
+  margin: 3px;
+  border-radius: var(--dice-border-radius);
+}
+.dice-stock .dice[data-rolled=true] {
+  animation: rolled-dice 1s forwards;
+  transform: translateY(calc(var(--dice-size) * -3));
+}
+.dice-stock .dice .die-list {
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  list-style-type: none;
+  width: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.dice-stock .dice .die-item {
+  pointer-events: none;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: var(--dice-border-radius);
+  border-style: outset;
+  border-width: 1px;
+  border-color: black;
+  box-sizing: border-box;
+  background-size: auto 100%;
+}
+.dice-stock .dice .die-item.side1 {
+  background-position: 0% 100%;
+  transform: rotate3d(0, 0, 0, 90deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+.dice-stock .dice .die-item.side2 {
+  background-position: 20% 100%;
+  transform: rotate3d(-1, 0, 0, 90deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+.dice-stock .dice .die-item.side3 {
+  background-position: 40% 100%;
+  transform: rotate3d(0, 1, 0, 90deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+.dice-stock .dice .die-item.side4 {
+  background-position: 60% 100%;
+  transform: rotate3d(0, -1, 0, 90deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+.dice-stock .dice .die-item.side5 {
+  background-position: 80% 100%;
+  transform: rotate3d(1, 0, 0, 90deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+.dice-stock .dice .die-item.side6 {
+  background-position: 100% 100%;
+  transform: rotate3d(1, 0, 0, 180deg) translateZ(calc(var(--dice-size) / 2 - var(--dice-border-radius) / 2));
+}
+@keyframes rolled-dice {
+  100% {
+    transform: initial;
+  }
+}
+.dice-stock .dice [data-roll-type=even] {
+  transition: transform 0.9s ease-out;
+}
+.dice-stock .dice [data-roll-type=odd] {
+  transition: transform 1.1s ease-out;
+}
+.dice-stock .dice [data-roll-type="-"] {
+  transition: transform 0;
+}
+.dice-stock .dice [data-roll-type=change] {
+  transition: transform 0.5s ease-in-out;
+}
+.dice-stock .dice [data-roll-type=even][data-roll="1"] {
+  transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=even][data-roll="2"] {
+  transform: rotateX(450deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=even][data-roll="3"] {
+  transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=even][data-roll="4"] {
+  transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=even][data-roll="5"] {
+  transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=even][data-roll="6"] {
+  transform: rotateX(360deg) rotateY(900deg) rotateZ(540deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="1"] {
+  transform: rotateX(-360deg) rotateY(-720deg) rotateZ(-360deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="2"] {
+  transform: rotateX(-270deg) rotateY(-720deg) rotateZ(-360deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="3"] {
+  transform: rotateX(-360deg) rotateY(-810deg) rotateZ(-360deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="4"] {
+  transform: rotateX(-360deg) rotateY(-630deg) rotateZ(-360deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="5"] {
+  transform: rotateX(-450deg) rotateY(-720deg) rotateZ(-360deg);
+}
+.dice-stock .dice [data-roll-type=odd][data-roll="6"] {
+  transform: rotateX(-360deg) rotateY(-900deg) rotateZ(-540deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="1"] {
+  transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="2"] {
+  transform: rotateX(450deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="3"] {
+  transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="4"] {
+  transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="5"] {
+  transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type="-"][data-roll="6"] {
+  transform: rotateX(360deg) rotateY(900deg) rotateZ(540deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="1"] {
+  transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="2"] {
+  transform: rotateX(450deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="3"] {
+  transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="4"] {
+  transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="5"] {
+  transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
+}
+.dice-stock .dice [data-roll-type=change][data-roll="6"] {
+  transform: rotateX(360deg) rotateY(900deg) rotateZ(540deg);
+}
+
+.mode_3d .dice-stock .dice {
+  transform: translateZ(calc(var(--dice-size) / 2));
+}
+.mode_3d .dice-stock .dice[data-rolled=true] {
+  transform: translateZ(calc(var(--dice-size) * 3));
+}

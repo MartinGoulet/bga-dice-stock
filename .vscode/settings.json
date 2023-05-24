@@ -1,0 +1,32 @@
+{
+    
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*\\.scss$",
+                "isAsync": true,
+                "cmd": "npm run build:scss"
+            },
+            {
+                "match": ".*\\.ts$",
+                "isAsync": true,
+                "cmd": "tsc",
+                "notMatch": "demo/manager.ts"
+            },
+            {
+                "match": "demo/manager.ts",
+                "isAsync": true,
+                "cmd": "tsc demo/manager.ts"
+            },
+        ]
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[typescript]": {
+        "editor.formatOnSave": true,
+    },
+    "files.exclude": {
+        "node_modules": true
+    }
+}

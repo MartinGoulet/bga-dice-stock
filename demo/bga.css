@@ -1,0 +1,45 @@
+
+.bgabutton {
+    border-radius: 6px;
+    box-shadow: 0 1px 0 #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 6px 12px;
+    text-overflow: ellipsis;
+    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.bgabutton.bgabutton_blue {
+    background: #4871b6;
+    background: -o-linear-gradient(top, #4065a3, #4871b6);
+    border: 1px solid #37578c;
+}
+
+.page-title {
+    box-shadow: 0 3px 8px rgba(0,0,0,.3);
+    font-size: 110%;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+}
+
+.mode_3d .game_play_area {
+
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    perspective: 2000px;
+    perspective-origin: 55% 50%;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+    transform: rotateX(30deg) translate(700px, 675px) rotateZ(6deg) scale3d(2, 2, 2);
+    transition: transform .5s ease;
+}

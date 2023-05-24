@@ -1,0 +1,8 @@
+.dice-stock .dice-selector {
+    border: 2px solid transparent;
+    min-height: var(--dice-size);
+    margin-left: var(--space-zone);
+
+    display: flex;
+    align-items: center;
+}

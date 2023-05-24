@@ -1,0 +1,23 @@
+.dice-stock {
+    --dice-size: 50px;
+    --dice-border-radius: 5px;
+    --lock-color: '#000';
+
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    min-height: 50px;
+    margin: 10px 0;
+
+    &.selectable {
+        .dice {
+            cursor: pointer;
+        }
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}

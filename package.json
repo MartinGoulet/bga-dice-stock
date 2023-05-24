@@ -1,0 +1,16 @@
+{
+  "name": "bga-dice-stock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bga-dice.js",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:scss": "sass --no-source-map src/dice-stock.scss bga-dice-stock.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4"
+  }
+}

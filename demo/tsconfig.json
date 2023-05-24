@@ -1,0 +1,16 @@
+{
+    "rootDir": ".", 
+    "compilerOptions": {
+      "target": "es5",
+      "module": "none",
+      "lib": ["dom", "esnext"],  
+      "sourceMap": false,
+      "outFile": "bga-dice.js",
+      "declaration": true,
+    },
+    "files": [
+      "../shared/framework.d.ts",
+      "../bga-dice-stock.d.ts",
+      "manager.ts"
+    ]
+}
