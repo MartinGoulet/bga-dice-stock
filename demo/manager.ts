@@ -8,8 +8,8 @@ const game: MyGame = {
     gamedatas: {
         players: {
             '20000123': { player_hero: 'moon-elf', player_color: '#ff0000' },
-            '20000124': { player_hero: 'barbarian', player_color: '#00ff00' },
-            '20000125': { player_hero: 'moon-elf', player_color: '#0000ff' },
+            '20000124': { player_hero: 'barbarian', player_color: '#008800' },
+            '20000125': { player_hero: 'moon-elf', player_color: '#ffa500' },
         },
     },
     stocks: {},
